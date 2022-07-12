@@ -7,14 +7,15 @@ import Proptype from 'prop-types'
 //     rating      =   PropType.number
 // }
 
-// FeaturedMovie.Proptype(
+// FeaturedMovie.proptype({
 //     slug            :   Proptype.string.isRequired,
 //     nama            :   Proptype.string.isRequired,
 //     category        :   Proptype.string.isRequired,
 //     thumbnail       :   Proptype.string.isRequired,
 //     rating          :   Proptype.number
+// })
 
-// )
+import {Link} from '@inertiajs/inertia-react'
 
 export default function FeaturedMovie({
     slug,
@@ -56,7 +57,7 @@ export default function FeaturedMovie({
                     <img src="/icons/ic_play.svg" width="50" alt="" />
                 </div>
             </div>
-            <a href={slug} className="inset-0 absolute z-50"></a>
+            <Link href={route('prototype.movie.show', slug)} className="inset-0 absolute z-50"></Link>
         </div>
     );
 }

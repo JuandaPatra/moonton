@@ -1,10 +1,15 @@
+// import layout sidebar
 import Sidebar from "./sidebar";
+
+//import topbar
 import Topbar from "./topbar";
+
+
 export default function Authenticated({ children }) {
     return (
         <>
             {/* <!-- START: Content --> */}
-            {/* END: Content */}
+            
             <div className="mx-auto max-w-screen hidden lg:block">
                 <Sidebar />
                 <div className="ml-[300px] px-[50px]">
@@ -19,6 +24,7 @@ export default function Authenticated({ children }) {
                     Sorry, this page only supported on 1024px screen or above
                 </div>
             </div>
+            {/* END: Content */}
         </>
     );
 }
