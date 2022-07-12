@@ -23,14 +23,43 @@ Route::get('user', function(){
     return 'user';
 })->middleware('role:user');
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+Route::redirect('/', 'prototype/login');
+
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+
+// Route::prefix('prototype')->group(function(){
+//     return Inertia::render('login');
+// })->name('Prototype/Login');
+
+Route::prefix('prototype')->name('prototype.')->group(function(){
+    route::get('/login', function(){
+        return Inertia::render('Prototype/login');
+    })->name('login');
+
+    route::get('/register', function(){
+        return Inertia::render('Prototype/register');
+    })->name('register');
+
+    route::get('/dashboard', function(){
+        return Inertia::render('Prototype/dashboard');
+    })->name('dashboard');
+
+    Route::get('/subscriptionPlan', function(){
+        return Inertia::render('Prototype/subscriptionPlan');
+    })->name('subscriptionPlan');
+
+    Route::get('/movie/{slug}', function(){
+        return Inertia::render('Prototype/Movie/show');
+    })->name('movie.show');
 });
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
