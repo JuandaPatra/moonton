@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from '@inertiajs/inertia-react';
 
 export default function NavLink({ href, active, children }) {
+    // console.log(href)
+    // console.log(active)
     return (
         <Link
             href={href}

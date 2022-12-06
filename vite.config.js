@@ -9,4 +9,9 @@ export default defineConfig({
         }),
         react(),
     ],
+    refresh: [
+        'resources/routes/**',
+        'routes/**',
+        'resources/views/**',
+    ],
 });

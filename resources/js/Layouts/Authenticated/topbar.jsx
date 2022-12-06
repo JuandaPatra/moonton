@@ -1,7 +1,11 @@
 import { useState,useRef } from "react";
-export default function Topbar() {
+import {Link} from '@inertiajs/inertia-react'
+// import route from "vendor/tightenco/ziggy/src/js";
+export default function Topbar({name}) {
     const [dropDown, setDropdown]=useState(true)
     const dropDownTarget = useRef()
+
+    // console.log(name)
 
 
     const triggerDropdown=()=>{
@@ -27,7 +31,7 @@ export default function Topbar() {
             />
             <div className="flex items-center gap-4 cursor-pointer" onClick={triggerDropdown}>
                 <span className="text-black text-sm font-medium">
-                    Welcome, Granola Sky
+                    Welcome, {name}
                 </span>
                 <div className="collapsible-dropdown flex flex-col gap-2 relative" >
                     <div
@@ -46,7 +50,7 @@ export default function Topbar() {
                         ref={dropDownTarget}
                     >
                         <a
-                            href="#!"
+                            href="/"
                             className="transition-all hover:bg-sky-100 p-4"
                         >
                             Dashboard
@@ -57,12 +61,14 @@ export default function Topbar() {
                         >
                             Settings
                         </a>
-                        <a
-                            href="sign_in.html"
+                        <Link 
+                            href={route('logout')}
+                            method="post"
+                            as="button"
                             className="transition-all hover:bg-sky-100 p-4"
                         >
                             Sign Out
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

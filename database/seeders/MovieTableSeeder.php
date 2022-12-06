@@ -22,8 +22,8 @@ class MovieTableSeeder extends Seeder
                 'category'      => 'Drama',
                 'video_url'     => 'https://www.youtube.com/watch?v=oBiggLZI2XU',
                 'thumbnail'     => 'https://source.unsplash.com/640x480?drama',
-                'rating'        => 9.2,
-                'is_featured'   => 1
+                'rating'        =>  9.2,
+                'is_featured'   =>  1
             ],
             [
                 'name'          => 'The Godfather',
@@ -31,8 +31,8 @@ class MovieTableSeeder extends Seeder
                 'category'      => 'Drama',
                 'video_url'     => 'https://www.youtube.com/watch?v=oBiggLZI2XU',
                 'thumbnail'     => 'https://source.unsplash.com/640x480?drama',
-                'rating'        => 9.4,
-                'is_featured'   => 0
+                'rating'        =>  9.4,
+                'is_featured'   =>  0
             ],
             [
                 'name'          => 'The Godfather: Part II',
@@ -40,8 +40,8 @@ class MovieTableSeeder extends Seeder
                 'category'      => 'Drama',
                 'video_url'     => 'https://www.youtube.com/watch?v=oBiggLZI2XU',
                 'thumbnail'     => 'https://source.unsplash.com/640x480?drama',
-                'rating'        => 9.4,
-                'is_featured'   => 0
+                'rating'        =>  9.4,
+                'is_featured'   =>  0
             ],
         ];
 
