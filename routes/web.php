@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\MovieController;
+use App\Http\Controllers\User\SubscriptionPlanController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\Admin\MovieController as AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +32,15 @@ Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashbo
 
     Route::get('movie/{movie:slug}', [MovieController::class,'show'])->name('movie.show');
 
+    Route::get('subcription-plan', [SubscriptionPlanController::class,'index'])->name('subscriptionPlan.index');
+
+    Route::post('subcription-plan/{subcriptionPlan:name}/users', [SubscriptionPlanController::class, 'subcription'])->name('subcriptionPlan.subscription');
+
 });
+
+// Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.dashboard.')->group(function(){
+//     Route::resources('movie',AdminController::class );
+// });
 
 // Route::get('user', function(){
 //     return 'user';

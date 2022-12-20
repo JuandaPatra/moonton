@@ -30,6 +30,8 @@ export default function MovieCard({
                 <img src="/icons/ic_play.svg" className="" width="50" alt="" />
             </div>
             <Link href={route('user.dashboard.movie.show', slug)} className="inset-0 absolute z-50"></Link>
+            
+            
         </div>
     );
 }
